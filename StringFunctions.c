@@ -1,3 +1,5 @@
+#include <string.h>
+
 int StrFreq(char *str, char ch)
 {
     int count = 0;
@@ -47,8 +49,8 @@ size_t StringLen(char *str)
 
 void StringCat(char *dest, char *src)
 {
-    size_t initDestSize = StringLen(dest);
-    for(size_t i = 0; i < StringLen(src); i++)
+    size_t initDestSize = strlen(dest);
+    for(size_t i = 0; i < strlen(src); i++)
     {
         dest[i + initDestSize] = src[i];
     }
@@ -67,7 +69,7 @@ void StringCopy(char *dest, char *src)
     }
     src = srcStart;
 
-    dest[StringLen(src)] = '\0';
+    dest[strlen(src)] = '\0';
 }
 
 char *StringString(char *haystack, const char *needle)
